@@ -36,12 +36,12 @@ def view_notes():
 
 # Функция для чтения заметок
 def read_note():
-    note_id = input("Введите ID заметки, которую вы хотите прочитать: ")
+    note_id = int(input("Введите ID заметки, которую вы хотите прочитать: "))
     for note in notes:
         if note["id"] == note_id:
             print("Заголовок:", note["title"])
             print("Текст:", note["body"])
-            print("Дата создания:", note["created_date"])
+            # print("Дата создания:", note["created_date"])
             print("Дата изменения:", note.get("modified_date", "неизвестно"))
             return
     print("Заметка с идентификатором", note_id, "не найдена.")
